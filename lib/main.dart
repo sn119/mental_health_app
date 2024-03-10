@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main() {
   runApp(MyJournalApp());
@@ -15,7 +16,72 @@ class MyJouranlApp extends StatelessWidget {
 
 class MyJournalScreen extends StatelessWidget {
   @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('My Journal'),
+      ),
+      body: JournalPage(),
+    );
+  }
 }
+
+class JournalPage extends StatelessWidget{
+  @override
+  _JournalPageState createState() => _JournalPageState();
+}
+
+class _JournalPageState extends State<JournalPage>{
+  TextEditingController _answerController = TextEditingController();
+  TextEditingController _answerController2 = TextEditingController();
+  String _question = "What's on your mind today?";
+  String _question2 = "What's something new you learned/discovered today?";
+
+  @override 
+  Widget build(BuildContext context){
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+        fit: BoxFit.cover,
+        ),
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: _buildJournalContent(),
+      ),
+    );
+  }
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /*class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
