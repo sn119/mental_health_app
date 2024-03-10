@@ -101,7 +101,7 @@ class _JournalPageState extends State<JournalPage>{
 
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => BreathingPage()),
+                    MaterialPageRoute(builder: (context) => WelcomePage()),
                   );
                 },
                 child: Text('Next'),
@@ -121,23 +121,54 @@ class _JournalPageState extends State<JournalPage>{
   }
 }
 
-class BreathingPage extends StatelessWidget{
+class WelcomePage extends StatelessWidget{
   @override 
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text('Breathing Page'),
+        title: Text('Welcome'),
       ),
       body: Center(
-        child: Text("This is the breathing page!"),
+        child: Text("Wel"),
       ),
     );
   }
 }
 
+/*
 
+class WelcomePage extends StatelessWidget{
+  @override 
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Are you ready for your relaxing journey!!'),
+      ),
+      body: IntroPage(),
+    );
+  }
+}
 
+class IntroPage extends StatefulWidget{
+  @override 
+  _WelcomePageState createState() => _WelcomePageState();
+} 
 
+class _WelcomePageState extends State<IntroPage>{
+  @override 
+  Widget build(BuildContext context){
+    return Container(
+      Child: [
+        Text(
+          decoration: InputDecoration(
+          hintText: 'Are you ready for your relaxing journey!!',
+          
+        ),
+        )
+      ],
+    );
+  }
+}
 
 
 
@@ -211,5 +242,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
-}*/
-
+}
+*/
+*/
