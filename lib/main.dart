@@ -55,7 +55,7 @@ class _JournalPageState extends State<JournalPage>{
 
   Widget _buildJournalContent(){
     return Container(
-      padding: EdgeInsets.all(16,0),
+      padding: EdgeInsets.all(16.0),
       child: Card(
         elevation: 5.0,
         shape: RoundedRectangleBorder(
