@@ -123,28 +123,32 @@ class _JournalPageState extends State<JournalPage>{
 
 class WelcomePage extends StatelessWidget{
   @override 
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Welcome'),
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: (){
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => MyJournalScreen()),
-            );
-          },
+        child: AnimatedOpacity (
+          duration: Duration(seconds: 1), 
+          opacity: 1.0,
 
-          style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.symmetric(horizontal: 50, vertical: 45),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            )
+          child: ElevatedButton (
+            onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyJournalScreen()),
+              );
+            },
+
+            style: ElevatedButton.styleFrom(
+              padding: EdgeInsets.symmetric(horizontal: 50, vertical: 45),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              )
+            ),
+            child: Text("Start your Journal", style: TextStyle(fontSize: 48)),
           ),
-
-          child: Text("Start your Journal", style: TextStyle(fontSize: 48)),
         ),
       ),
     );
