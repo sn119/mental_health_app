@@ -26,14 +26,32 @@ class FinalPage extends StatelessWidget {
       ),
       backgroundColor: Color.fromARGB(255, 130, 169, 187),
       body: Center(
-        child: Text(
-          'Are you feeling better?',
-          style: TextStyle(
-            fontSize: 24.0,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          ),
-        ),
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Are you feeling better?',
+                style: TextStyle(
+                  fontSize: 24.0,
+                  color: Colors.black,
+                ),
+              ),
+              Text(
+                'We genuinely hope these activities have helped you relax.',
+                style: TextStyle(
+                  fontSize: 24.0,
+                  color: Colors.blueGrey,
+                ),
+              ),
+              Text(
+                'This app is always there to help with your anxiety whenever and wherever you may need it.',
+                style: TextStyle(
+                  fontSize: 24.0,
+                  color: Colors.black,
+                ),
+              ),
+            ]
+        )
       ),
     );
   }
