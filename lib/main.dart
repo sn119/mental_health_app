@@ -349,6 +349,17 @@ class __BreathingSessionState extends State <_BreathingSession>{
               message,
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
+
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FinalPage()),
+                );
+              },
+              child: Text('Next'),
+            ),
           ],
         ),
       ),
@@ -365,7 +376,7 @@ class FinalPage extends StatelessWidget{
     return Scaffold(
       body: Stack(
         children:[
-          Image.asset('assets/background.gif',
+          Image.asset('assets/land.jpeg',
           fit: BoxFit.cover,
           width: double.infinity,
           height: double.infinity,),
@@ -402,6 +413,6 @@ class FinalPage extends StatelessWidget{
           )
         ]
       )
-    )
+    );
   }
 }
