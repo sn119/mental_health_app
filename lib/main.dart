@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyJournalApp());
+  runApp(MyApp());
 }
 
+<<<<<<< HEAD
 class MyJournalApp extends StatelessWidget {
   @override
   Widget build(BuildContext context){
@@ -177,71 +178,44 @@ class _WelcomePageState extends State<IntroPage>{
 
 /*class MyApp extends StatelessWidget {
   const MyApp({super.key});
+=======
+class MyApp extends StatelessWidget {
+  //const MyApp({super.key});
+>>>>>>> 89bb3152b9f8f4c09af906794e7e091e30c0ef6f
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      title: 'Text Page Example',
+      home: FinalPage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class FinalPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
-      
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-       
-        title: Text(widget.title),
+        title: Text('Final Page'),
       ),
+      backgroundColor: Colors.lightBlue,
       body: Center(
-        
-        child: Column(
-          
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+        child: Text(
+          'Are you feeling better?',
+          style: TextStyle(
+            fontSize: 24.0,
+            fontWeight: FontWeight.bold,
+            color: Color.fromARGB(0, 0, 0, 0),
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
+<<<<<<< HEAD
 */
 */
+=======
+>>>>>>> 89bb3152b9f8f4c09af906794e7e091e30c0ef6f
