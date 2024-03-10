@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 void main() {
   runApp(MyJournalApp());
@@ -42,7 +41,9 @@ class _JournalPageState extends State<JournalPage>{
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-        fit: BoxFit.cover,
+          image: AssetImage('assets/journal.png'),
+          fit: BoxFit.cover,
+
         ),
       ),
       child: Scaffold(
@@ -52,26 +53,87 @@ class _JournalPageState extends State<JournalPage>{
     );
   }
 
-  
+  Widget _buildJournalContent(){
+    return Container(
+      padding: EdgeInsets.all(16,0),
+      child: Card(
+        elevation: 5.0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15.0),
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            childern: [
+              Text(
+                _question,
+                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 16.0),
+              TextField(
+                controller: _answerController,
+                maxLines: 5,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Type your answer here...',
+                ),
+              ),
+              SizedBox(height: 16.0),
+              Text(
+                _question2,
+                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 16.0),
+              TextField(
+                controller: _answerController,
+                maxLines: 5,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Type your answer here...',
+                ),
+              ),
+              SizedBox(height: 16.0),
+              ElevatedButton(
+                onPressed: () {
+                  print('User Answer 1: ${_answerController.text}');
+                  print('User Answer 1: ${_answerController2.text}');
 
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => BreathingPage()),
+                  );
+                },
+                child: Text('Next'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  @override
+  void dispose(){
+    _answerController.dispose();
+    _answerController2.dispose();
+    super.dispose();
+  }
 }
 
-
+class BreathingPage extends StatelessWidget{
+  @override 
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Breathing Page'),
+      ),
+      body: Center(
+        child: Text("This is the breathing page!"),
+      ),
+    );
+  }
+}
 
 
 
