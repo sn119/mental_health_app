@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MyJournalApp());
 }
 
-<<<<<<< HEAD
 class MyJournalApp extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home: MyJournalScreen(),
+      home: WelcomePage(),
     );
   }
 }
@@ -87,7 +86,7 @@ class _JournalPageState extends State<JournalPage>{
               ),
               SizedBox(height: 16.0),
               TextField(
-                controller: _answerController,
+                controller: _answerController2,
                 maxLines: 5,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
@@ -99,11 +98,11 @@ class _JournalPageState extends State<JournalPage>{
                 onPressed: () {
                   print('User Answer 1: ${_answerController.text}');
                   print('User Answer 1: ${_answerController2.text}');
-
+/*
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => WelcomePage()),
-                  );
+                    MaterialPageRoute(builder: (context) => MyJournalApp()),
+                  );*/
                 },
                 child: Text('Next'),
               ),
@@ -130,92 +129,24 @@ class WelcomePage extends StatelessWidget{
         title: Text('Welcome'),
       ),
       body: Center(
-        child: Text("Are you ready for your relaxing journey!"),
-      ),
-    );
-  }
-}
+        child: ElevatedButton(
+          onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MyJournalScreen()),
+            );
+          },
 
-
-/*
-class WelcomePage extends StatelessWidget{
-  @override 
-  Widget build(BuildContext context){
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Are you ready for your relaxing journey!!'),
-      ),
-      body: IntroPage(),
-    );
-  }
-}
-
-class IntroPage extends StatefulWidget{
-  @override 
-  _WelcomePageState createState() => _WelcomePageState();
-} 
-
-class _WelcomePageState extends State<IntroPage>{
-  @override 
-  Widget build(BuildContext context){
-    return Container(
-      Child: [
-        Text(
-          decoration: InputDecoration(
-          hintText: 'Are you ready for your relaxing journey!!',
-          
-        ),
-        )
-      ],
-    );
-  }
-}
-
-
-
-
-
-
-/*class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-=======
-class MyApp extends StatelessWidget {
-  //const MyApp({super.key});
->>>>>>> 89bb3152b9f8f4c09af906794e7e091e30c0ef6f
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Text Page Example',
-      home: FinalPage(),
-    );
-  }
-}
-
-class FinalPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Final Page'),
-      ),
-      backgroundColor: Colors.lightBlue,
-      body: Center(
-        child: Text(
-          'Are you feeling better?',
-          style: TextStyle(
-            fontSize: 24.0,
-            fontWeight: FontWeight.bold,
-            color: Color.fromARGB(0, 0, 0, 0),
+          style: ElevatedButton.styleFrom(
+            padding: EdgeInsets.symmetric(horizontal: 50, vertical: 45),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            )
           ),
+
+          child: Text("Start your Journal", style: TextStyle(fontSize: 48)),
         ),
       ),
     );
   }
 }
-<<<<<<< HEAD
-*/
-*/
-=======
->>>>>>> 89bb3152b9f8f4c09af906794e7e091e30c0ef6f
