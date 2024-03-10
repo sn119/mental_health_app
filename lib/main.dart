@@ -24,14 +24,14 @@ class FinalPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Final Page'),
       ),
-      backgroundColor: Colors.lightBlue,
+      backgroundColor: Color.fromARGB(255, 130, 169, 187),
       body: Center(
         child: Text(
           'Are you feeling better?',
           style: TextStyle(
             fontSize: 24.0,
             fontWeight: FontWeight.bold,
-            color: Color.fromARGB(0, 0, 0, 0),
+            color: Colors.black,
           ),
         ),
       ),
