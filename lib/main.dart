@@ -2,7 +2,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyJournalApp());
+  runApp(MaterialApp(
+    home: MyJournalApp(),
+  ));
 }
 
 class MyJournalApp extends StatelessWidget {
@@ -99,11 +101,11 @@ class _JournalPageState extends State<JournalPage>{
                 onPressed: () {
                   print('User Answer 1: ${_answerController.text}');
                   print('User Answer 1: ${_answerController2.text}');
-/*
+
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => MyJournalApp()),
-                  );*/
+                    MaterialPageRoute(builder: (context) => _BreathingSession()),
+                  );
                 },
                 child: Text('Next'),
               ),
@@ -122,6 +124,7 @@ class _JournalPageState extends State<JournalPage>{
   }
 }
 
+//welcome main page
 class WelcomePage extends StatelessWidget{
   @override 
   Widget build(BuildContext context) {
@@ -129,26 +132,36 @@ class WelcomePage extends StatelessWidget{
       appBar: AppBar(
         title: Text('Welcome'),
       ),
-      body: Center(
-        child: AnimatedOpacity (
-          duration: Duration(seconds: 1), 
-          opacity: 1.0,
 
-          child: ElevatedButton (
-            onPressed: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => _FeelingPageState()),
-              );
-            },
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/land.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
 
-            style: ElevatedButton.styleFrom(
-              padding: EdgeInsets.symmetric(horizontal: 50, vertical: 45),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              )
+        child: Center(
+          child: AnimatedOpacity (
+            duration: Duration(seconds: 1), 
+            opacity: 1.0,
+    
+            child: ElevatedButton (
+              onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => _FeelingPageState()),
+                );
+              },
+
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 45),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                )
+              ),
+              child: Text("Start your Journey", style: TextStyle(fontSize: 48)),
             ),
-            child: Text("Start your Journey", style: TextStyle(fontSize: 48)),
           ),
         ),
       ),
@@ -293,9 +306,9 @@ class __BreathingSessionState extends State <_BreathingSession>{
   String message = '';
 
   @override
-  void inittState(){
+  void initState(){
     super.initState();
-    Timer.periodic(Duration(seconds: 1), (timer)){
+    Timer.periodic(Duration(seconds: 1), (timer){
       if (counter < maxTime){
         if (counter % 10 == 0){
           setMessage('Breath In');
@@ -307,13 +320,13 @@ class __BreathingSessionState extends State <_BreathingSession>{
       } 
       else{
         timer.cancel();
-        setMessage('Breathing Session Completed 🧘')
+        setMessage('Breathing Session Completed 🧘');
       }
     });
   }
   void setMessage(String newMessage){
     setState(() {
-      message = newText;
+      message = newMessage;
     });
   }
 
@@ -329,7 +342,7 @@ class __BreathingSessionState extends State <_BreathingSession>{
           children: [
             Text(
               'Breathing session in progress...',
-              style: TextStyle(fontsize:30),
+              style: TextStyle(fontSize:30),
             ),
             SizedBox(height: 20),
             Text(
@@ -340,5 +353,55 @@ class __BreathingSessionState extends State <_BreathingSession>{
         ),
       ),
     );
+  }
+}
+
+
+
+//final page
+class FinalPage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      body: Stack(
+        children:[
+          Image.asset('assets/background.gif',
+          fit: BoxFit.cover,
+          width: double.infinity,
+          height: double.infinity,),
+
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  'Congrats! You Have Completed Your Journey of Relaxation.',
+                  style: TextStyle(
+                    fontSize: 24.0,
+                    color: Colors.white,
+                    
+                  ),
+                ),
+
+                Text(
+                  'We genuinely hope these activties have helped you relax.',
+                  style: TextStyle(
+                    fontSize: 24.0, color: Colors.white,
+                  ),
+                ),
+
+                Text(
+                  'This app is always there to help with your anxiety whenever and wherever you may need it.',
+                  style: TextStyle(
+                    fontSize: 24.0,
+                    color:Colors.white,
+                  )
+                )
+              ],
+            )
+          )
+        ]
+      )
+    )
   }
 }
