@@ -394,6 +394,31 @@ class FinalPage extends StatelessWidget{
           width: double.infinity,
           height: double.infinity,),
 
+
+          Center(
+          child: AnimatedOpacity (
+            duration: Duration(seconds: 1), 
+            opacity: 1.0,
+    
+            child: ElevatedButton (
+              onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => WelcomePage()),
+                );
+              },
+
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 45),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                )
+              ),
+              child: Text("Congrats! You Have Completed Your Journey of Relaxation.", style: TextStyle(fontSize: 35)),
+            ),
+          ),
+        ),
+/*
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -423,7 +448,7 @@ class FinalPage extends StatelessWidget{
                 )
               ],
             )
-          )
+          )*/
         ]
       )
     );
