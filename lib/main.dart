@@ -128,6 +128,19 @@ class _JournalPageState extends State<JournalPage>{
 class WelcomePage extends StatelessWidget{
   @override 
   Widget build(BuildContext context) {
+
+/*
+ Widget build(BuildContext context){
+    return Scaffold(
+      body: Stack(
+        children:[
+          Image.asset('assets/land.gif',
+          fit: BoxFit.cover,
+          width: double.infinity,
+          height: double.infinity,),
+
+*/
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Welcome'),
@@ -136,7 +149,7 @@ class WelcomePage extends StatelessWidget{
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/land.png'),
+            image: AssetImage('assets/land.gif'),
             fit: BoxFit.cover,
           ),
         ),
@@ -376,7 +389,7 @@ class FinalPage extends StatelessWidget{
     return Scaffold(
       body: Stack(
         children:[
-          Image.asset('assets/land.jpeg',
+          Image.asset('assets/land.gif',
           fit: BoxFit.cover,
           width: double.infinity,
           height: double.infinity,),
