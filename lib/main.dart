@@ -4,13 +4,13 @@ void main() {
   runApp(MyJournalApp());
 }
 
-class MyJouranlApp extends StatelessWidget {
+class MyJournalApp extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     return MaterialApp(
       home: MyJournalScreen(),
     );
-  }Cre ()
+  }
 }
 
 class MyJournalScreen extends StatelessWidget {
@@ -25,7 +25,7 @@ class MyJournalScreen extends StatelessWidget {
   }
 }
 
-class JournalPage extends StatelessWidget{
+class JournalPage extends StatefulWidget{
   @override
   _JournalPageState createState() => _JournalPageState();
 }
@@ -65,7 +65,7 @@ class _JournalPageState extends State<JournalPage>{
           padding: EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            childern: [
+            children: [
               Text(
                 _question,
                 style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
