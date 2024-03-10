@@ -1,10 +1,157 @@
 import 'package:flutter/material.dart';
 
 void main() {
+<<<<<<< HEAD
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+=======
+  runApp(MyJournalApp());
+}
+
+class MyJournalApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      home: MyJournalScreen(),
+    );
+  }
+}
+
+class MyJournalScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('My Journal'),
+      ),
+      body: JournalPage(),
+    );
+  }
+}
+
+class JournalPage extends StatefulWidget{
+  @override
+  _JournalPageState createState() => _JournalPageState();
+}
+
+class _JournalPageState extends State<JournalPage>{
+  TextEditingController _answerController = TextEditingController();
+  TextEditingController _answerController2 = TextEditingController();
+  String _question = "What's on your mind today?";
+  String _question2 = "What's something new you learned/discovered today?";
+
+  @override 
+  Widget build(BuildContext context){
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/journal.png'),
+          fit: BoxFit.cover,
+
+        ),
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: _buildJournalContent(),
+      ),
+    );
+  }
+
+  Widget _buildJournalContent(){
+    return Container(
+      padding: EdgeInsets.all(16.0),
+      child: Card(
+        elevation: 5.0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15.0),
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                _question,
+                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 16.0),
+              TextField(
+                controller: _answerController,
+                maxLines: 5,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Type your answer here...',
+                ),
+              ),
+              SizedBox(height: 16.0),
+              Text(
+                _question2,
+                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 16.0),
+              TextField(
+                controller: _answerController,
+                maxLines: 5,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Type your answer here...',
+                ),
+              ),
+              SizedBox(height: 16.0),
+              ElevatedButton(
+                onPressed: () {
+                  print('User Answer 1: ${_answerController.text}');
+                  print('User Answer 1: ${_answerController2.text}');
+
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => BreathingPage()),
+                  );
+                },
+                child: Text('Next'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  @override
+  void dispose(){
+    _answerController.dispose();
+    _answerController2.dispose();
+    super.dispose();
+  }
+}
+
+class BreathingPage extends StatelessWidget{
+  @override 
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Breathing Page'),
+      ),
+      body: Center(
+        child: Text("This is the breathing page!"),
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/*class MyApp extends StatelessWidget {
+>>>>>>> origin/main
   const MyApp({super.key});
 
   // This widget is the root of your application.
@@ -13,6 +160,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+<<<<<<< HEAD
         // This is the theme of your application.
         //
         // TRY THIS: Try running your application with "flutter run". You'll see
@@ -28,6 +176,8 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
+=======
+>>>>>>> origin/main
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
@@ -38,6 +188,7 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
+<<<<<<< HEAD
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -48,6 +199,8 @@ class MyHomePage extends StatefulWidget {
   // used by the build method of the State. Fields in a Widget subclass are
   // always marked "final".
 
+=======
+>>>>>>> origin/main
   final String title;
 
   @override
@@ -59,17 +212,21 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
+<<<<<<< HEAD
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
+=======
+>>>>>>> origin/main
       _counter++;
     });
   }
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -103,6 +260,20 @@ class _MyHomePageState extends State<MyHomePage> {
           // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
+=======
+    
+    return Scaffold(
+      appBar: AppBar(
+      
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+       
+        title: Text(widget.title),
+      ),
+      body: Center(
+        
+        child: Column(
+          
+>>>>>>> origin/main
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
@@ -122,4 +293,9 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+<<<<<<< HEAD
 }
+=======
+}*/
+
+>>>>>>> origin/main
