@@ -129,14 +129,14 @@ class WelcomePage extends StatelessWidget{
         title: Text('Welcome'),
       ),
       body: Center(
-        child: Text("Wel"),
+        child: Text("Are you ready for your relaxing journey!"),
       ),
     );
   }
 }
 
-/*
 
+/*
 class WelcomePage extends StatelessWidget{
   @override 
   Widget build(BuildContext context){
